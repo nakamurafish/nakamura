@@ -54,7 +54,9 @@ class DatabaseController extends Controller
         $age1=$request->input('dbage1');
         $age2=$request->input('dbage2');
 
-        $users=DB::table('members')->where([['NAME','LIKE','%'.$name.'%'],['AGE','>=',$age1],['AGE','<=',$age2],])->get();
+        $users=DB::table('members')
+        ->where([['NAME','LIKE','%'.$name.'%'],['AGE','>=',$age1],['AGE','<=',$age2],])
+        ->get();
 
 
         return view('db1_confirm',compact('users'));
