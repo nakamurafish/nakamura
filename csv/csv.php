@@ -308,12 +308,67 @@ echo "問題１５".'<br /><br />';
 
     echo $question15_a;
 
-    echo '<br /><br />';
+    echo '<br /><br /><br /><br />';
 
 
+echo "[日付]".'<br /><br />';
 
+echo "1.　今日の日付".'<br /><br />';
+
+    echo date('m月d日');
+
+    $weekday = array("月","火","水","木","金","土","日");
+
+    echo $weekday[date("w")]."曜日";
         
-        
+    echo '<br /><br /><br /><br />';    
+
+echo "2.　今日の日付、秒まで".'<br /><br />';
+
+    echo date('Y年m月d日 H時i分s秒');
+
+    echo '<br /><br /><br /><br />';  
+echo "3.　昨日の日付".'<br /><br />';
+
+    echo date('Y年m月d日',strtotime('-1 day'));
+
+    echo '<br /><br /><br /><br />';  
+echo "4.　３ヶ月前の日付".'<br /><br />';
+
+
+    echo date('Y年m月d日',strtotime('-3 month'));
+
+    echo '<br /><br /><br /><br />';  
+echo "5.　38ヶ月前の日付".'<br /><br />';
+
+
+    echo date('Y年m月d日',strtotime('-38 month'));
+
+    echo '<br /><br /><br /><br />';  
+echo "6.　120日後の日付の曜日".'<br /><br />';
+
+echo date('Y年m月d日',strtotime('+120 day'));
+
+    $weekday = array("日","月","火","水","木","金","土");
+
+    echo date('w');
+
+    echo $weekday[date('w',strtotime('+120 day'))]."曜日";
+
+    echo '<br /><br /><br /><br />';  
+echo "7.　現在のミリ秒".'<br /><br />';
+
+
+    echo 'ミリ秒 = '.mb_substr(explode(".",microtime(true))[1],0,3 ); 
+
+    echo '<br /><br /><br /><br />';  
+echo "8.　現在のマイクロ秒".'<br /><br />';
+
+    echo 'マイクロ秒 = '.microtime(true);
+
+    echo '<br /><br /><br /><br />';  
+
+
 ?>
 
 
