@@ -22,30 +22,18 @@ th {
 </head>
 <body>
 <table>
-<!--<th>ID</th>-->
 <th>DEPARTMENT</th>
-<!--<th>PRFECTURE</th>-->
-<!--<th>STAFF_ID</th>-->
 <th>AMOUNT</th>
 <th>YEAR</th>
 <th>MONTH</th>
-<!--<th>CREATE_DATE</th>-->
 <th>NAME</th>
-<!--<th>AGE</th>-->
-<!--<th>GENDER</th>-->
 @foreach($users as $user)
 <tr>
-<!--<td>{{ $user->ID }}</td>-->
 <td>{{ $user->DEPARTMENT }}</td>
-<!--<td>{{ $user->PRFECTURE }}</td>-->
-<!--<td>{{ $user->STAFF_ID }}</td>-->
 <td>{{ $user->AMOUNT }}</td>
 <td>{{ $user->YEAR }}</td>
 <td>{{ $user->MONTH }}</td>
-<!--<td>{{ $user->CREATE_DATE}}</td>-->
 <td>{{ $user->NAME }}</td>
-<!--<td>{{ $user->AGE }}</td>-->
-<!--<td>{{ $user->GENDER }}</td>-->
 </tr>
 @endforeach
 </table>

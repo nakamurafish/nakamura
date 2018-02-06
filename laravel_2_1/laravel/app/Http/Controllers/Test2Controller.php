@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -48,4 +47,5 @@ class Test2Controller extends Controller {
             }
             return view('test2/confirm',compact('staff_id', 'department', 'prfecture', 'amount', 'year', 'month', 'create_date', 'name', 'age', 'gender'));  
     }
+    
 }

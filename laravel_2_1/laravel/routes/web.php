@@ -25,24 +25,21 @@ Route::post('user/complete', 'UserController@complete');
 //sales
 //sales top画面
 Route::get('/', 'SalesController@index');
-//新規追加画面
-Route::get('/registration', 'SalesController@registration');
-Route::post('/registration', 'SalesController@confirm');
+//新規登録画面
+Route::get('create', 'SalesController@create');
+Route::post('create', 'SalesController@store');
 //編集画面
-Route::get('/update', 'SalesController@update');
-Route::post('/update', 'SalesController@confirm');
-
-//sales top画面に戻る
-Route::post('/', 'SalesController@index');
+Route::get('edit/{id}', 'SalesController@edit');
+Route::post('edit/{id}', 'SalesController@update');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //test
-Route::get('/test', 'TestController@registration');
-Route::post('/test', 'TestController@confirm');
-Route::post('test/complete', 'TestController@complete');
+//Route::get('/test', 'TestController@registration');
+//Route::post('/test', 'TestController@confirm');
+//Route::post('test/complete', 'TestController@complete');
 
 //test2
-Route::get('/test2', 'Test2Controller@registration');
-Route::post('/test2', 'Test2Controller@confirm');
-Route::post('test2/complete', 'Test2Controller@complete');
+//Route::get('/test2', 'Test2Controller@registration');
+//Route::post('/test2', 'Test2Controller@confirm');
+//Route::post('test2/complete', 'Test2Controller@complete');

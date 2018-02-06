@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="utf-8">
 <title>sales top画面</title>
@@ -9,9 +8,6 @@
 <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
 <style>
-
-
-
 html, body, h1, p, nav, ul,li, table, th, td {
     margin: 0;
     padding: 0;

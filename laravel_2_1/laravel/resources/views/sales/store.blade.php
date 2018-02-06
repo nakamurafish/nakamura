@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>確認画面</title>
+<title>新規登録完了画面</title>
 <style>
 ul {
     list-style: none;
@@ -28,18 +28,6 @@ input#submit {
 </style>
 </head>
 <body>
-<form action="/" method="POST">
-<input name="_token" type="hidden" value="{{csrf_token()}}">
-<input type="hidden" name="department" value="{$department}}">
-<input type="hidden" name="prfecture" value="{{$prfecture}}">
-<input type="hidden" name="staff_id" value="{{$staff_id}}">
-<input type="hidden" name="amount" value="{{$amount}}">
-<input type="hidden" name="year" value="{{$year}}">
-<input type="hidden" name="monthr" value="{{$month}}">
-<input type="hidden" name="create_date" value="{{$create_date}}">
-<input type="hidden" name="name" value="{{$name}}">
-<input type="hidden" name="age" value="{{$age}}">
-<input type="hidden" name="gender" value="{{$gender}}">
 <ul>
 <li>
 <label>DEPARTMENT</label>{{$department}}
@@ -72,8 +60,7 @@ input#submit {
 <label>GENDER</label>{{$gender}}
 </li>
 </ul>
-<input type="submit" value="送信">
-</form>  
+<a href="/">sales top画面に戻る</a>
 </body>
 </html>
 
