@@ -1,54 +1,127 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>編集画面</title>
+@extends('layouts.base')
+
+@section('title', '編集画面')
+
 <style>
-ul {
-    list-style: none;
-    width: 290px;
-    margin: 50px auto;
-}
-li {
+/*-- CONTENT --*/  
+.content {
+    width: 650px;
+    margin: 95px auto;
+    padding: 25px;
+    background-color: darkseagreen;
+    box-sizing: border-box;
+    }
+/*-- H2_TITLE --*/
+.h2_title {
     margin-bottom: 15px;
-    padding: 2px;
-    font-weight: bold;
-}
-label {
-    width:130px;
-    margin-right: 10px;
-    float: left;
+    color: darkseagreen;
     letter-spacing: 2px;
-}
-input#age {
-    width: 30px;
-}
+    font-family: "Sawarabi Mincho";
+    text-align: center;
+    }
+/*-- WRAPPER --*/
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    }
+form {
+    margin-bottom: 0px;
+    }
+.column {
+    display: flex;
+    margin-bottom: 15px;
+    }
+.column:last-child {
+    margin-bottom: 0px;   
+    }   
+.column_left {
+    width: 25%;
+    line-height: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: "Sawarabi Mincho";
+    }
+.column_right {
+    width: 75%;
+    }
+/*-- BUTTON --*/
+.ul_button {
+    display: inline-flex;
+    align-items: center;
+    }
+.li_button {
+    margin-right: 15px;  
+    }
+.button {
+    width: 150px;
+    height: 35px;
+    background: #ffffff;
+    border: 1px solid #d43f3a;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: "Sawarabi Mincho";
+    }
+.button a {
+    color: #000000;
+    }
 </style>
-</head>
-<body>
+
+@section('content')
+<div class="wrapper">
+<h2 class="h2_title">編集フォーム</h2>
+
 <form action="edit" method="POST">
 {{ csrf_field() }}
 <input type="hidden" name="id" value="{{$users->ID}}">
-<ul>
-<li>
-<label>部署</label>{{$users->DEPARTMENT}}
+
+<!-- DEPARTMENT -->
+<ul class="column">
+<li class="column_left">部署</li>
+<li class="column_right">{{$users->DEPARTMENT}}</li>
+</ul>
+
+<!-- NAME -->
+<ul class="column">
+<li class="column_left">担当者</li>
+<li class="column_right">{{$users->NAME}}</li>
+</ul>
+
+<!-- AMOUNT -->
+<ul class="column">
+<li class="column_left">売上げ</li>
+<li class="column_right">
+<input type="text" name="amount" class="amount" value="{{$users->AMOUNT}}">
 </li>
-<li>
-<label>担当者</label>{{$users->NAME}}
-</li>
-<li>
-<label>売上げ</label><input type="text" name="amount" value="{{$users->AMOUNT}}">
-</li>
-<li>
-<label>年</label>{{$users->YEAR}}
-</li>
-<li>
-<label>月</label>{{$users->MONTH}}
-</li>
-<li>
-<input type="submit" value="送信">
+</ul>
+
+<!-- YEAR -->
+<ul class="column">
+<li class="column_left">年</li>
+<li class="column_right">{{$users->YEAR}}</li>
+</ul>
+
+<!-- MONTH -->
+<ul class="column">
+<li class="column_left">月</li>
+<li class="column_right">{{$users->MONTH}}</li>
+</ul>
+
+<!--　BUTTON -->
+<ul class="column">
+<li class="column_left"></li>
+<li class="column_right">
+<ul class="ul_button">
+<li class="li_button"><input type="submit" value="確認" class="button"></li>
+<li class="li_button"><button class="button"><a href="/">戻る</a></button></li>
+</ul>
 </li>
 </ul>
 </form>
-</body>
-</html>
+
+</div>
+<!-- .wrapper -->
+@endsection

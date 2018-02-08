@@ -28,6 +28,7 @@ Route::get('/', 'SalesController@index');
 //新規登録画面
 Route::get('create', 'SalesController@create');
 Route::post('create', 'SalesController@store');
+Route::post('create/getIndex', 'SalesController@getIndex');
 //編集画面
 Route::get('edit/{id}', 'SalesController@edit');
 Route::post('edit/{id}', 'SalesController@update');

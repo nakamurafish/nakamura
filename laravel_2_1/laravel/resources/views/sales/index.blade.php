@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="utf-8">
 <title>sales top画面</title>
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Spectral+SC:500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
 <style>
-
-
-
-html, body, h1, p, nav, ul,li, table, th, td {
+html, body, h1, h2, h3, p, nav, ul, li, table, th, td {
     margin: 0;
     padding: 0;
     line-height: 1.0;
@@ -26,6 +22,10 @@ ul {
 }
 a {
     text-decoration: none;
+}
+img {
+    border: 0;
+    vertical-align: bottom;
 }
 #container {
     width: 960px;

@@ -28,11 +28,11 @@ input#submit {
 </style>
 </head>
 <body>
- <form action="user/complete" method="POST">
+<form action="user/complete" method="POST">
 <input name="_token" type="hidden" value="{{csrf_token()}}">
 <input type="hidden" name="name" value="{{$name}}">
 <input type="hidden" name="age" value="{{$age}}">
-<input type="hidden" name="age" value="{{$gender}}">
+<input type="hidden" name="gender" value="{{$gender}}">
 <ul>
 <li>
 <label>NAME</label>{{$name}}
@@ -48,4 +48,3 @@ input#submit {
 </form>  
 </body>
 </html>
-

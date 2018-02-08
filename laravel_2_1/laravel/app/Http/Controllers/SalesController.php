@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-
 class SalesController extends Controller {
     
     //sales top画面
@@ -25,6 +24,21 @@ class SalesController extends Controller {
         return view('sales.create');
     }
     public function store(Request $request) {
+            //salesテーブルに値を追加
+            $department = $request->input('department');
+            $prfecture = $request->input('prfecture');
+            $staff_id = $request->input('staff_id');
+            $amount = $request->input('amount');
+            $year = $request->input('year');
+            $month = $request->input('month');
+            $create_date = $request->input('create_date');
+            //sales_staffテーブルに値を追加
+            $name = $request->input('name');
+            $age = $request->input('age');
+            $gender = $request->input('gender');
+            return view('sales.store', compact('staff_id', 'department', 'prfecture', 'amount', 'year', 'month', 'create_date', 'name', 'age', 'gender')); 
+    }
+    public function getIndex(Request $request) {
         DB::beginTransaction();
             try {
             //salesテーブルに値を追加
@@ -50,7 +64,7 @@ class SalesController extends Controller {
             }catch (Exception $e) {
             $success = false;  
             }
-            return view('sales.store', compact('staff_id', 'department', 'prfecture', 'amount', 'year', 'month', 'create_date', 'name', 'age', 'gender')); 
+            return view('sales.getIndex', compact('staff_id', 'department', 'prfecture', 'amount', 'year', 'month', 'create_date', 'name', 'age', 'gender')); 
     }
     //編集画面
     public function edit(Request $request) {
